@@ -17,15 +17,15 @@ export default function Home() {
         <
         main >
         <
-        Header title = "Welcome to my app!" / >
+        Header title = "Coming soon!" / >
         <
         p className = "description" >
-        Hello my name is Teddy < code > pages / index.js < /code> < /
+        In the meantime visit < a href: "www.teddymathias.com" > teddymathias.com < /a> < /
         p > <
         /main>
 
-        <
-        Footer / >
+        // <
+        // Footer / >
         <
         /div>
     )
