@@ -20,8 +20,8 @@ export default function Home() {
         Header title = "Welcome to my app!" / >
         <
         p className = "description" >
-        Hello my name is Teddy < code > pages / index.js < /code> <
-        /p> <
+        Hello my name is Teddy < code > pages / index.js < /code> < /
+        p > <
         /main>
 
         <
