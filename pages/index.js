@@ -12,7 +12,7 @@ export default function Home() {
         <main >
         <Header title = "Coming soon!" / >
         <p className = "description" >
-        In the meantime visit < a href="www.teddymathias.com"> teddymathias.com </a> </p> </main>
+        In the meantime visit <a href="http://www.teddymathias.com"> teddymathias.com </a> </p> </main>
         <Footer/>
         </div>
     )
