@@ -1,0 +1,280 @@
+
+#investment-logo {
+    display: none;
+}
+
+#investments {
+  margin-top: 110px;
+  scroll-margin-top: 40px;
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 0px;
+    margin-left: 50px;
+  }
+  li {
+    width: 100%;
+    height: 78px;
+    border-bottom: 1px solid #ddd;
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
+    a {
+      font-size: 32px;
+      width: 100%;
+      display: flex;
+      white-space: nowrap;
+      align-items: center;
+      height: 100%;
+      cursor: default;
+      @include media-breakpoint-down(md) {
+        font-size: 24px;
+      }
+    }
+    &:nth-child(11){
+      border-bottom: none;
+    }
+  }
+  
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+
+  #big-investment-logo{
+    img.fadein {
+      -webkit-animation: fadeIn 0.5s linear forwards;
+      animation: fadeIn 0.5s linear forwards;
+    }
+    img.fadeout {
+      -webkit-animation: fadeOut 0.5s linear forwards;
+      animation: fadeOut 0.5s linear forwards;
+    }
+  } 
+
+  @-webkit-keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+  }
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  @-webkit-keyframes fadeOut {
+   0% {opacity: 1;}
+   100% {opacity: 0;}
+  }
+  @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+}
+
+
+.partners-grid {
+  @include media-breakpoint-down(xl){
+      display: block;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      align-items: center;
+      justify-items: center;
+      margin-bottom: 150px;
+      gap: 10px;
+      width: 100%;
+  
+      .investment-icons-desktop {
+        position: relative;
+        display: grid;
+        place-items: center;
+        background: #E7E5E9;
+        width: 100%;
+        height: 250px;
+        grid-column: span 2;
+
+        // &:nth-last-child(1) {
+        //   // needed when item is the only on the row
+        //   grid-column: 3/5;
+        // }
+
+        // &:nth-last-child(-n + 2) {
+        //   // needed when items are the only two in the row
+        //   // grid-column: span 3;
+        //   justify-content: center;
+        // }
+
+        &:last-child:nth-child(3n - 1) {
+          grid-column-end: -2;
+        }
+        
+        &:nth-last-child(2):nth-child(3n + 1) {
+          grid-column-end: 4;
+        }
+
+        //acquired badge
+        .acquired{
+          grid-column: 1;
+          grid-row: 1;
+          color: $black;
+          background-color: $orange;
+          justify-self: left;
+          align-self: start;
+          width: 80px;
+          height: 21px;
+          text-align: center;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        a {
+          grid-column: 1;
+          grid-row: 1;
+          color: black;
+        }
+      
+        img{
+          grid-column: 1;
+          grid-row: 1;
+          display: block;
+          height: auto;
+          max-height: 138px;
+          max-width: 65%; 
+
+
+         &.evolve {
+            width: 158px;
+          }
+
+        &.loam {
+            width: 162px;
+          }
+
+         &.meati {
+            width: 104px;
+            height: auto;
+          }
+        
+        }
+      
+        p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          height: 100%;
+          opacity: 0;
+          text-align: center;
+          font-size: 28px;
+          line-height: 38px;
+          font-weight: 400;
+          z-index:1000;
+          width: 100%;
+          top: 0;
+          left: 0;
+      
+          &:hover {
+            transition: opacity 0.3s ease;
+            opacity: 1;
+          }
+
+          span {
+            display: block;
+            max-width: 90%;
+            margin: 0 auto;
+          }
+        }
+
+      &:after {
+      content: "";
+      position: absolute;
+      background: $orange;
+      color: $black;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transition:  0.3s ease;
+      }
+
+      &:hover:after {
+
+      transition: opacity 0.3s ease;
+      opacity:1; 
+      }
+    }
+  }
+}
+
+
+//agrofy logo
+#investments > div > div > div:nth-child(3) > img {
+  max-width: 55%;
+}
+
+.investment-icons-desktop {
+  @include media-breakpoint-down(md){
+
+    height: 340px !important;
+    place-items: center;
+  }
+}
+  
+
+#investment-logo {
+  @include media-breakpoint-down(sm){
+      display: block;
+      display: grid;
+      grid-template-columns: repeat( 4, 1fr );
+      align-items: center;
+      justify-items: center;
+      padding-top: 3rem;
+      width: 100%;
+  
+      .investment-icons {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 110px;
+        margin: 0;
+        border-right: 1px solid rgb(223, 222, 222);
+        border-bottom: 1px solid rgb(223, 222, 222);
+        grid-column: span 2;
+
+        &:nth-child(even) {
+          border-right: none;
+        }
+
+        &:nth-last-child(1),
+        &:nth-last-child(2):nth-child(odd) {
+          border-bottom: none;
+        }
+
+         //acquired badge
+        .acquired{
+          position: absolute;
+          color: $black;
+          background-color: $orange;
+          left: 0;
+          align-self: start;
+          width: 46px;
+          height: 12px;
+          text-align: center;
+          font-size: 9px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        img{
+          max-height: 55px;
+          max-width: 55%;
+        }
+      }
+    }
+  }
+
+

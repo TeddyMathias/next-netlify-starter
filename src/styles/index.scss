@@ -1,0 +1,24 @@
+// modules
+@import '~normalize.css/normalize.css';
+@import 'bootstrap_override'; // needs to be before bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// global
+@import 'variables';
+@import 'global';
+@import 'font';
+@import 'typography';
+@import 'sal-js-animations';
+
+// partials
+@import 'header';
+@import 'introduction';
+@import 'slider';
+@import 'investments';
+@import 'partners';
+@import 'team';
+@import 'what-we-do';
+@import 'footer';
+
+// pages
+@import 'terms-conditions';

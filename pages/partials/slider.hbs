@@ -1,0 +1,76 @@
+<div id="slider">
+  <div class="cursor"></div>
+  <div class="container" data-sal="slide-up">
+    {{!-- <p class="small-heading my-0" data-sal="slide-up">Our areas of interest</p> --}}
+    <div class="embla" id="embla">
+      <div class="embla__viewport">
+        <div class="embla__container">
+          <div class="embla__slide">
+            <div class="embla__slide__inner">
+              <img class="embla__slide__img" src="../../src/assets/img/plants-in-jar.jpg" alt="Plant in jar.">
+            </div>
+          </div> 
+          <div class="embla__slide">
+            <div class="embla__slide__inner">
+              <img class="embla__slide__img" src="../../src/assets/img/cabbage.jpg" alt="Close up of green cabbage">
+            </div>
+          </div>
+          <div class="embla__slide">
+           <div class="embla__slide__inner">
+              <img class="embla__slide__img zuchini" src="../../src/assets/img/zuchini-1.jpg" alt="Zuchini.">
+           </div>
+          </div>
+          <div class="embla__slide">
+            <div class="embla__slide__inner">
+              <img class="embla__slide__img" src="../../src/assets/img/grain-nasa.jpg" alt="Sand landscape">
+            </div>
+          </div>
+          <div class="embla__slide">
+            <div class="embla__slide__inner">
+              <img class="embla__slide__img" src="../../src/assets/img/trees.jpg" alt="Red trees">
+            </div>
+          </div>
+          <div class="embla__slide">
+            <div class="embla__slide__inner">
+              <img class="embla__slide__img" src="../../src/assets/img/roots.jpg" alt="Plant roots">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let mouseCursor = document.querySelector(".cursor");
+  let offImage = document.querySelector('#slider');
+  let sliderHover = document.querySelectorAll('img');
+
+  window.addEventListener('mousemove', cursor);
+
+  function cursor(e){
+    mouseCursor.style.top = e.pageY + 'px';
+    mouseCursor.style.left = e.pageX + 'px';
+  }
+
+  offImage.addEventListener('mouseleave', () => {
+      mouseCursor.classList.remove("shrink");
+  });
+  offImage.addEventListener('mouseover', () => {
+      mouseCursor.classList.add("shrink");
+    })
+
+  sliderHover.forEach(img => {
+    img.addEventListener('mouseleave', () => {
+      mouseCursor.classList.remove("grow", "active", "shrink");
+    
+    })
+    img.addEventListener('mouseover', () => {
+      mouseCursor.classList.add("grow", "active");
+    })
+  })
+
+  document.addEventListener('DOMContentLoaded', function (event) {
+    window.theSlider('.embla__viewport');
+  })
+</script>

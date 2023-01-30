@@ -1,0 +1,98 @@
+<div id="header">
+  <div class="container page-header header-content fade-in">
+    <div class="container">
+    <div class="row justify-content-between">
+    <div class="col logo" data-sal="fade">
+      <a href="/" class="">
+      <img class="logo-icon" src="../../src/assets/img/icons/logo-icon.svg" alt="Acre logo">
+      <img class="logo-text" src="../../src/assets/img/logo-text.svg" alt="Acre">
+      </a>
+    </div>
+
+    <div id="open-menu" class="row mobile-menu-open d-md-none" data-sal="fade" >
+      <div class="bar topBar"></div>
+      <div class="bar btmBar"></div>
+    </div>
+
+    {{!-- <div class="d-sm-block menu"> --}}
+    <div class="menu">
+      <div class="row">
+        <div class="d-flex flex-md-row mr-lg-2 flex-column ">
+      <a href="/#whatWeDoLink" class="col">Mission</a>
+      <a href="/#partners" class="col">Companies</a>
+      <a href="/#team" class="col"><span>Who we are</span></a>
+      <a href="/#footer" class="get-in-touch">Get in touch</a>
+      <div class="copyright text-center m-auto">© Acre Venture Partners.</div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+<script>
+  
+  (function () {
+
+      const mobileMenuBtn = document.querySelector('#open-menu');
+      const header = document.querySelector('.header-content');
+      const body  = document.querySelector('body');
+      mobileMenuBtn.onclick = function () {
+        if (header.classList.contains('menu-opened')) {
+          header.classList.remove('menu-opened');
+          header.classList.add('menu-closed');
+          // body.classList.remove('hide-overflow'); reinstate this to stop scrolling on mobile when menu open
+        } else {
+          header.classList.remove('menu-closed');
+          header.classList.add('menu-opened');
+          // body.classList.add('hide-overflow'); reinstate this to stop scrolling on mo~bile when menu open
+        }
+      }
+
+
+      document.querySelectorAll(".menu a").forEach(function(el){
+        el.onclick = function (){
+          window.goToElement("#" + this.href.split("#")[1]);
+          if (mobileMenuBtn.offsetWidth || mobileMenuBtn.offsetHeight || mobileMenuBtn.getClientRects().length) {
+            // if mobile menu button visible, toggle menu button to fold up menu
+            mobileMenuBtn.click();
+          }
+          return false;
+        }
+      })
+  }());
+
+    //header menu show/hide
+
+    const body = document.body;
+    const nav = document.querySelector(".page-header");
+    const scrollUp = "scroll-up";
+    const scrollDown = "scroll-down";
+    let lastScroll = 0;
+ 
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll <= 0) {
+        body.classList.remove(scrollUp);
+        return;
+      }
+      if (currentScroll >= 0 && window.innerWidth < 864) {
+        body.classList.remove(scrollUp);
+        body.classList.remove(scrollDown);
+        return;
+      }
+   
+      if (currentScroll > lastScroll && window.innerWidth > 865 && !body.classList.contains(scrollDown)) {
+      // down
+        body.classList.remove(scrollUp);
+        body.classList.add(scrollDown);
+      } else if (currentScroll < lastScroll && window.innerWidth > 866 && body.classList.contains(scrollDown)) {
+      // up
+        body.classList.remove(scrollDown);
+        body.classList.add(scrollUp);
+      }
+      lastScroll = currentScroll;
+    });
+
+</script>
